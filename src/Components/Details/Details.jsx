@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import Button from "../Button/Button";
 
 const Details = () => {
   const allMobiles = useLoaderData(); //loading data when this route loads
@@ -32,11 +33,7 @@ const Details = () => {
             <p className="py-4 text-2xl font-bold">Battery - {battery}</p>
             <p className="py-4 text-2xl font-bold">Storage - {storage}</p>
             <p className="py-4 text-2xl font-bold mb-5">Display - {display}</p>
-            <button
-              className="btn bg-[#76453B]  text-white hover:bg-red-950"
-            >
-              Add to cart
-            </button>
+            <Button text={"Add to cart"}></Button>
           </div>
         </div>
       </div>

@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../Button/Button";
 
 const Customers = ({ customers }) => {
+
+    //States for customer details
+    const [imageOnModal, setImageOnModal] = useState();
+    const [firstNameOnModal, setFirstNameOnModal] = useState();
+    const [lastNameOnModal, setLastNameOnModal] = useState();
+    const [emailOnModal, setEmailOnModal] = useState();
+    const [phoneOnModal, setPhoneOnModal] = useState();
+    const [addressOnModal, setAddressOnModal] = useState({});
+
+    const openModal = (image, firstName, lastName, email, phone, address) =>{
+        setImageOnModal(image);
+        setFirstNameOnModal(firstName);
+        setLastNameOnModal(lastName);
+        setEmailOnModal(email);
+        setPhoneOnModal(phone);
+        setAddressOnModal(address);
+        document.getElementById("my_modal_5").showModal();
+    }
   return (
     <div>
       <h1 className="text-center text-3xl font-bold mt-16 text-[#76453B]">
@@ -47,36 +66,36 @@ const Customers = ({ customers }) => {
                 <th>
                   
                   {/* Open the modal using document.getElementById('ID').showModal() method */}
+ 
                   <button
-                    className="btn"
+                    className=" h-10 w-20 rounded-lg border-[#76453B] bg-[#76453B] text-white hover:bg-red-950"
                     onClick={() =>
-                      document.getElementById("my_modal_5").showModal()
+                        openModal(customer.image, customer.firstName, customer.lastName, customer.phone, customer.email, customer.address)
+                      
                     }
                   >
                     Details
                   </button>
                   <dialog
                     id="my_modal_5"
-                    className="modal modal-bottom sm:modal-middle"
+                    className="modal modal-bottom sm:modal-middle border-2"
                   >
                     <div className="modal-box">
-
-                      <h3 className="font-bold text-lg">Hello!</h3>
                       <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={customer.image}
+                          src={imageOnModal}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
                     </div>
-                      <p className="py-4">
-                        Press ESC key or click the button below to close
-                      </p>
+                      <h3 className="font-bold text-2xl text-[#76453B] mb-7">{firstNameOnModal} {lastNameOnModal}</h3>
+                      <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Email:</span> {emailOnModal}</h3>
+                      <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Phone:</span> {phoneOnModal}</h3>
+                      <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Address:</span> {addressOnModal.street} {addressOnModal.city} {addressOnModal.state} {addressOnModal.zipCode} {addressOnModal.country}</h3>
                       <div className="modal-action">
                         <form method="dialog">
-                          {/* if there is a button in form, it will close the modal */}
-                          <button className="btn">Close</button>
+                          <Button text={"Close"}></Button>
                         </form>
                       </div>
                     </div>

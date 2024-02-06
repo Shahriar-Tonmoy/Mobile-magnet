@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 const Mobile = ({ mobile }) => {
     const {
@@ -27,7 +28,7 @@ const Mobile = ({ mobile }) => {
               <p className="font-semibold text-xl text-start text-[#76453B]">Camera - {camera}</p> 
               <p className="font-semibold text-xl text-start text-[#76453B]">Battery - {battery}</p> 
               <div className="card-actions justify-start">
-              <Link to={`/details/${id}`} ><button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">Details</button></Link>
+              <Link to={`/details/${id}`} ><Button text={"Details"}></Button></Link>
               </div>
             </div>
           </div>

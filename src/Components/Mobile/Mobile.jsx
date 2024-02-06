@@ -22,7 +22,7 @@ const Mobile = ({ mobile }) => {
               />
             </figure>
             <div className="card-body mt-3">
-              <h2 className="card-title text-2xl text-start text-[#76453B]">{brand} - {model}</h2>
+              <h2 className="card-title text-3xl font-extrabold text-start text-[#76453B]">{brand} - {model}</h2>
               <p className="font-semibold text-xl text-start text-[#76453B]">Price  - <span className="text-[#76453B]">{price}</span></p>
               <p className="font-semibold text-xl text-start text-[#76453B]">Camera - {camera}</p> 
               <p className="font-semibold text-xl text-start text-[#76453B]">Battery - {battery}</p> 

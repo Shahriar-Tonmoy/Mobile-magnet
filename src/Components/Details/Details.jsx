@@ -21,17 +21,17 @@ const Details = () => {
   console.log(selectedMobile);
 
   return (
-    <div>
-      <div className="hero min-h-screen">
+    <div className="h-max">
+      <div className="hero my-16">
         <div className="hero-content flex-col lg:flex-row">
           <img src={imageURL} className="max-w-sm rounded-lg" />
           <div>
             <h1 className="text-5xl font-bold text-[#76453B]">{brand} - {model}</h1>
-            <p className="py-6">{details}</p>
+            <p className="py-6 text-lg font-semibold">{details}</p>
             <p className="py-4 text-2xl font-bold">Camera - {camera}</p>
             <p className="py-4 text-2xl font-bold">Battery - {battery}</p>
             <p className="py-4 text-2xl font-bold">Storage - {storage}</p>
-            <p className="py-4 text-2xl font-bold">Display - {display}</p>
+            <p className="py-4 text-2xl font-bold mb-5">Display - {display}</p>
             <button
               className="btn bg-[#76453B]  text-white hover:bg-red-950"
             >

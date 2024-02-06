@@ -9,6 +9,7 @@ import {
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home/Home.jsx';
 import Details from './Components/Details/Details.jsx';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
         path:"/details/:id",
         element: <Details></Details>,
         loader: ()=>fetch('https://shahriar-tonmoy.github.io/REPLIQ-DATA/product.json')
-      }
+      },
+      {
+        path:"/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
     ]
   },
 ]);

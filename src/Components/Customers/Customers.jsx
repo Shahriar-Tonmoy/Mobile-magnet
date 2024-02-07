@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
+import { FaPlus } from "react-icons/fa";
+import AddCustomer from "../AddCustomer/AddCustomer";
 
 const Customers = ({ customers }) => {
 
@@ -36,6 +38,29 @@ const Customers = ({ customers }) => {
               <th className="text-lg text-[#76453B]">Email</th>
               <th className="text-lg text-[#76453B]">Phone</th>
               <th className="text-lg text-[#76453B]">Address</th>
+              <th className="text-lg text-[#76453B] text-start">
+                <button
+                  onClick={() =>
+                    document.getElementById("my_modal_4").showModal()
+                  }
+                >
+                  <FaPlus className="text-[#76453B]" />
+                </button>
+              </th>
+              <dialog
+                id="my_modal_4"
+                className="modal modal-bottom sm:modal-middle"
+              >
+                <div className="modal-box">
+                  <AddCustomer></AddCustomer>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </tr>
           </thead>
           <tbody>

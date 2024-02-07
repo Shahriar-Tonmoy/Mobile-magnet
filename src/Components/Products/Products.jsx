@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-scroll";
+import { FaPlus } from "react-icons/fa";
+import AddProducts from "../AddProducts/AddProducts";
 
 const Products = ({ mobiles }) => {
   //States for mobile details
@@ -12,7 +14,7 @@ const Products = ({ mobiles }) => {
   const [cameraOnModal, setCameraOnModal] = useState();
   const [batteryOnModal, setBatteryOnModal] = useState();
   const [detailsOnModal, setDetailsOnModal] = useState();
-  const [quantityOnModal, setQuantityOnModal]  = useState();
+  const [quantityOnModal, setQuantityOnModal] = useState();
 
   const openModal = (
     image,
@@ -35,14 +37,16 @@ const Products = ({ mobiles }) => {
     setCameraOnModal(camera);
     setBatteryOnModal(battery);
     setDetailsOnModal(details);
-    setQuantityOnModal(quantity)
+    setQuantityOnModal(quantity);
     document.getElementById("my_modal_5").showModal();
   };
   return (
     <div>
-      <h1 className="text-center text-3xl font-bold mt-16 text-[#76453B]">
-        Mobiles
-      </h1>
+      <div className="flex justify-center items-center mt-16">
+        <h1 className="text-center text-3xl font-bold  text-[#76453B]">
+          Mobiles
+        </h1>
+      </div>
       <div className="overflow-x-auto mt-10">
         <table className="table">
           {/* head */}
@@ -52,6 +56,29 @@ const Products = ({ mobiles }) => {
               <th className="text-lg text-[#76453B]">Price</th>
               <th className="text-lg text-[#76453B]">Storage</th>
               <th className="text-lg text-[#76453B]">Quantity</th>
+              <th className="text-lg text-[#76453B] text-start">
+                <button
+                  onClick={() =>
+                    document.getElementById("my_modal_4").showModal()
+                  }
+                >
+                  <FaPlus className="text-[#76453B]" />
+                </button>
+              </th>
+              <dialog
+                id="my_modal_4"
+                className="modal modal-bottom sm:modal-middle"
+              >
+                <div className="modal-box">
+                  <AddProducts></AddProducts>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </tr>
           </thead>
           <tbody>
@@ -77,9 +104,7 @@ const Products = ({ mobiles }) => {
                 </td>
                 <td>{mobile.price}</td>
                 <td>{mobile.storage}</td>
-                <td>
-                  {mobile.quantity}
-                </td>
+                <td>{mobile.quantity}</td>
 
                 <th>
                   {/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -127,24 +152,30 @@ const Products = ({ mobiles }) => {
                         <span className="text-xl">Price:</span> {priceOnModal}
                       </h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3">
-                        <span className="text-xl">Storage:</span> {storageOnModal}
+                        <span className="text-xl">Storage:</span>{" "}
+                        {storageOnModal}
                       </h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3">
-                        <span className="text-xl">Display:</span> {storageOnModal}
+                        <span className="text-xl">Display:</span>{" "}
+                        {displayOnModal}
                       </h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3">
                         <span className="text-xl">Camera:</span> {cameraOnModal}
                       </h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3">
-                        <span className="text-xl">Battery:</span> {batteryOnModal}
+                        <span className="text-xl">Battery:</span>{" "}
+                        {batteryOnModal}
                       </h3>
                       <h3 className="font-bold text-lg text-gray-600 mb-3">
-                        <span className="text-xl text-[#76453B]">Details:</span> {detailsOnModal}
+                        <span className="text-xl text-[#76453B]">Details:</span>{" "}
+                        {detailsOnModal}
                       </h3>
-                      
+
                       <div className="modal-action">
                         <form method="dialog">
-                        <button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">close</button>
+                          <button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">
+                            close
+                          </button>
                         </form>
                       </div>
                     </div>

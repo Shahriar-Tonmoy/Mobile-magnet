@@ -46,9 +46,9 @@ const Dashboard = () => {
 
       <Tabs className="w-full mx-auto mt-10" defaultValue={1}>
         <TabsList>
+          <Tab value={3}>Products</Tab>
           <Tab value={1}>Customers</Tab>
           <Tab value={2}>Orders</Tab>
-          <Tab value={3}>Products</Tab>
         </TabsList>
         <TabPanel value={1}><Customers customers={customers}></Customers></TabPanel>
         <TabPanel value={2}><Orders orders={orders} ></Orders></TabPanel>

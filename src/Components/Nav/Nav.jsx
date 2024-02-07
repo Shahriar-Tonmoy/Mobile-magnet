@@ -7,10 +7,13 @@ const Nav = () => {
     <>
       <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
         <NavLink className="text-sm text-[#76453B] lg:text-lg font-semibold" to="/">
-          Home
+            Home
         </NavLink>
         <NavLink className="text-sm text-[#76453B] lg:text-lg font-semibold" to="/dashboard">
-        Dashboard
+            Dashboard
+        </NavLink>
+        <NavLink className="text-sm text-[#76453B] lg:text-lg font-semibold" to="/login">
+            Login
         </NavLink>
       </div>
     </>

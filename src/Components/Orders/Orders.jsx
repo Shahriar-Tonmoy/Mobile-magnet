@@ -26,7 +26,7 @@ const Orders = ({ orders }) => {
   return (
     <div>
       <h1 className="text-center text-3xl font-bold mt-16 text-[#76453B]">
-        orders
+        Orders
       </h1>
       <div className="overflow-x-auto mt-10">
         <table className="table">

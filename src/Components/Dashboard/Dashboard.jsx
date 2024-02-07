@@ -11,6 +11,7 @@ import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
+import Products from "../Products/Products";
 
 const Dashboard = () => {
   const [mobiles, setMobiles] = useState([]);
@@ -51,7 +52,7 @@ const Dashboard = () => {
         </TabsList>
         <TabPanel value={1}><Customers customers={customers}></Customers></TabPanel>
         <TabPanel value={2}><Orders orders={orders} ></Orders></TabPanel>
-        <TabPanel value={3}>Third page</TabPanel>
+        <TabPanel value={3}><Products mobiles={mobiles}></Products></TabPanel>
       </Tabs>
       {/* <Orders  orders={orders}></Orders> */}
     </div>
@@ -64,8 +65,6 @@ export default Dashboard;
   const Tab = styled(BaseTab)`
     color: white;
     cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: bold;
     background-color: transparent;
     width: 100%;
     line-height: 1.5;
@@ -98,8 +97,7 @@ export default Dashboard;
 
   const TabPanel = styled(BaseTabPanel)`
     width: 100%;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 0.875rem;
+
   `;
 
   const TabsList = styled(BaseTabsList)(

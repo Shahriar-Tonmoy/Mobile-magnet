@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
+import Button from "../Button1/Button";
 import { FaPlus } from "react-icons/fa";
 import AddCustomer from "../AddCustomer/AddCustomer";
+import Button1 from "../Button1/Button";
 
 const Customers = ({ customers }) => {
 
@@ -123,7 +124,7 @@ const Customers = ({ customers }) => {
                       <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Address:</span> {addressOnModal.street} {addressOnModal.city} {addressOnModal.state} {addressOnModal.zipCode} {addressOnModal.country}</h3>
                       <div className="modal-action">
                         <form method="dialog">
-                          <Button text={"Close"}></Button>
+                          <Button1 text={"Close"}></Button1>
                         </form>
                       </div>
                     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Summary from "../Summary/Summary";
 import Customers from "../Customers/Customers";
-import Button from "../Button/Button";
+import Button from "../Button1/Button";
 import { Link } from "react-scroll";
 import Orders from "../Orders/Orders";
 

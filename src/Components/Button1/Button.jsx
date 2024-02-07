@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ text }) => {
+const Button1 = ({ text }) => {
   return (
     <div>
       <button className="btn border-[#76453B] bg-[#76453B] text-white hover:bg-red-950">
@@ -10,4 +10,4 @@ const Button = ({ text }) => {
   );
 };
 
-export default Button;
+export default Button1;

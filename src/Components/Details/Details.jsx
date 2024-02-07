@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import Button from "../Button/Button";
+import Button from "../Button1/Button";
 
 const Details = () => {
   const allMobiles = useLoaderData(); //loading data when this route loads

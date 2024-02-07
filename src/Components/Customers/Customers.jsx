@@ -7,13 +7,15 @@ const Customers = ({ customers }) => {
     const [imageOnModal, setImageOnModal] = useState();
     const [firstNameOnModal, setFirstNameOnModal] = useState();
     const [lastNameOnModal, setLastNameOnModal] = useState();
+    const [ordersOnModal, setOrdersOnModal] = useState();
     const [emailOnModal, setEmailOnModal] = useState();
     const [phoneOnModal, setPhoneOnModal] = useState();
     const [addressOnModal, setAddressOnModal] = useState({});
 
-    const openModal = (image, firstName, lastName, email, phone, address) =>{
+    const openModal = (image, firstName, lastName, email, phone, address, orders) =>{
         setImageOnModal(image);
         setFirstNameOnModal(firstName);
+        setOrdersOnModal(orders);
         setLastNameOnModal(lastName);
         setEmailOnModal(email);
         setPhoneOnModal(phone);
@@ -70,7 +72,7 @@ const Customers = ({ customers }) => {
                   <button
                     className=" h-10 w-20 rounded-lg border-[#76453B] bg-[#76453B] text-white hover:bg-red-950"
                     onClick={() =>
-                        openModal(customer.image, customer.firstName, customer.lastName, customer.phone, customer.email, customer.address)
+                        openModal(customer.image, customer.firstName, customer.lastName, customer.phone, customer.email, customer.address, customer.orders)
                       
                     }
                   >
@@ -90,6 +92,7 @@ const Customers = ({ customers }) => {
                       </div>
                     </div>
                       <h3 className="font-bold text-2xl text-[#76453B] mb-7">{firstNameOnModal} {lastNameOnModal}</h3>
+                      <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">No. of Orders:</span> {ordersOnModal}</h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Email:</span> {emailOnModal}</h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Phone:</span> {phoneOnModal}</h3>
                       <h3 className="font-bold text-lg text-[#76453B] mb-3"><span className="text-xl">Address:</span> {addressOnModal.street} {addressOnModal.city} {addressOnModal.state} {addressOnModal.zipCode} {addressOnModal.country}</h3>

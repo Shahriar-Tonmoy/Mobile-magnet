@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button1 from '../Button1/Button';
 
 const Registration = () => {
     return (
@@ -56,8 +57,20 @@ const Registration = () => {
                 required
               />
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone Number</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Phone Number"
+                name="password"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control mt-6">
-              <button className="btn bg-opacity-0 border-[#76453B] hover:bg-opacity-0 hover:border-green-200">Sign up</button>
+              <Button1 text={'Sign up'}></Button1>
             </div>
           </form>
           <p className="text-center">Already have an account? <Link className="text-[#76453B] underline" to="/login">Sign In</Link> here</p>

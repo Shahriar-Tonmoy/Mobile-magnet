@@ -15,6 +15,9 @@ const Nav = () => {
         <NavLink className="text-sm text-[#76453B] lg:text-lg font-semibold" to="/login">
             Login
         </NavLink>
+        <NavLink className="text-sm text-[#76453B] lg:text-lg font-semibold" to="/cart">
+            Cart
+        </NavLink>
       </div>
     </>
   );
